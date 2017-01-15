@@ -25,12 +25,13 @@ public class FF_Friends_Validation {
               driver.findElement(By.id("email")).sendKeys("kamenkaksk@gmail.com");
 
               /*password*/driver.findElement(By.id("pass")).sendKeys("*******");
-              /*Log In*/driver.findElement(By.id("u_0_n")).click();                     // Thread.sleep(1000);   // --- 1 sec
+              Thread.sleep(1000);   // --- 1 sec
+              /*Log In*/ driver.findElement(By.id("u_0_o")).click();                     
               /*Dmitry*/ wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[1]/div[1]/div/div[1]/div/div/div/div[2]/div[1]/div[1]/div/a/span"))).click();
               String n_friends_actual = driver.findElement(By.xpath("//div[2]/div/div/a[3]/span[1]")).getText();
               driver.findElement(By.id("userNavigationLabel")).click();
               driver.findElement(By.xpath("//li[17]/a/span/span")).click();
-              driver.quit();
+              //driver.quit();
        
               if (n_friends_expected.equals(n_friends_actual)) {
                      System.out.println("Test Case ID:\t\tTC-01.01.01");
